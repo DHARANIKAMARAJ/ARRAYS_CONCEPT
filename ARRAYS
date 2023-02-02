@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include<limits.h>
+void max_ele(int *a,int n)
+{
+    int i,j,count=0,max;
+    int maxcount=INT_MIN;
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            if(a[i]==a[j])
+            {
+                count++;
+                if(count>maxcount)
+                {
+                    maxcount=count;
+                    max=a[j];
+                }
+            }
+        }
+    }
+    printf("%d %d",maxcount,max);
+}
+
+int main()
+{
+  int n,i;
+  scanf("%d",&n);
+  int a[n];
+  for(i=0;i<n;i++)
+  scanf("%d",&a[i]);
+  max_ele(a,n);
+  
+  
+  
+  
+    return 0;
+}
+
